@@ -11,11 +11,13 @@ function findMatching(drivers, name) {
 }
 
 function fuzzyMatch(drivers, string) {
-    // let match = drivers.filter(element => element.includes(string) && string[0..(string.length - 1)] == element[0..(string.length - 1)])
-    let match = drivers.filter(element => element.includes(string))
-
+    let match = drivers.filter(e => e.startsWith(string))
     if (match) {
-        console.log(match)
-        // return match
+        return match
     }
+}
+
+function matchName(drivers, name) {
+    let nameArr = drivers.filter(e => e.name === name)
+    return nameArr
 }
